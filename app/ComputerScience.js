@@ -170,6 +170,7 @@ export default function CS() {
                         />
                     </View>
                     <View style={{ marginTop: width * 0.05 }}></View>
+                    <Footer />
                 </ScrollView>
                 <View style={{ marginTop: width * 0.05 }}></View>
             </ImageBackground>

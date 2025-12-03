@@ -11,7 +11,7 @@
   "dependencies": {
     "@expo-google-fonts/oswald": "^0.2.3",
     "@expo/metro-runtime": "~4.0.0",
-    "expo": "~52.0.41",
+    "expo": "^54.0.25",
     "expo-app-loading": "^2.1.1",
     "expo-av": "~15.0.2",
     "expo-cli": "^6.3.10",

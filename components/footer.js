@@ -1,8 +1,9 @@
-import { Text, View, StyleSheet, useWindowDimensions } from 'react-native'
+import { Text, View, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 import Colors from './colors'
+import { Link } from 'expo-router';
 
-export default function footer(props) {
+export default function footer() {
   const { width, height } = useWindowDimensions();
   useFonts({
     'oswaldlight': Oswald_300Light,
@@ -11,16 +12,28 @@ export default function footer(props) {
   })
 
   const styles = StyleSheet.create({
+    logo: {
+      alignContent: 'flex-start',
+      justifyContent: 'flex-start',
+      width: 150,
+      height: 150
+    },
     bottom: {
-      height: width * 0.01,
-      backgroundColor: props.backgroundColor || Colors.primary,
+      width: width,
+      height: height * 0.4,
+      backgroundColor: "silver",
       padding: width * 0.05,
     },
   })
-
+  
   return (
     <View>
       <View style={styles.bottom}>
+        <Image
+          style={styles.logo}
+          source={require('../assets/logo.png')}
+        />
+        <Text>aaaaaaa</Text>
       </View>
     </View>
   )
