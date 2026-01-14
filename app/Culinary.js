@@ -11,13 +11,17 @@ import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import { YouTubePlayer } from "../components/Youtube"
 import { useFonts, Oswald_500Medium } from "expo-font"
+import FoundCulImg from '../assets/Culinary/easy-dinner-recipes-for-beginners_cat-1.webp'
 
 export default function Culi() {
     const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
     const { width } = useWindowDimensions()
+    console.log(width);
     useFonts({
         'oswaldmedium': Oswald_500Medium,
-      })
+    })
+
+    const foundCulinary = width > 500 ? require('../assets/Culinary/easy-dinner-recipes-for-beginners_cat-1.webp') : require('../assets/Culinary/2606852-84d547ec32d142f782e7d9ec104c9635.jpg')
     return (
         <View style={styles.background}>
             <TopBar />
@@ -32,7 +36,7 @@ export default function Culi() {
                         info={[
                             <Chunk2Info
                                 infoHeader={"Foundations of Culinary (Lvl 1)"}
-                                image={require('../assets/Culinary/easy-dinner-recipes-for-beginners_cat-1.webp')}
+                                image={foundCulinary}
                                 infoBody={[<Text style={{ fontWeight: "bold" }}>Open to grades: 9-12</Text>, <br />, <Text>Foundations of Culinary Arts is an <Text style={{ fontWeight: "bold" }}>introductory course</Text> designed to inform students about careers in the food prep and service industries or related fields, basic nutritional and cooking concepts, and the history and influence of culture on food.</Text>]}
                             />,
                             <Chunk2Info
@@ -86,17 +90,17 @@ export default function Culi() {
                         ]}
                     />
                     <View style={{ marginTop: width * 0.05 }} />
-                    <View style={{alignItems: "Center", backgroundColor: "#FFFFFF"}}>
-                    <LinearGradient style={{ width: width * 0.6, height: width * 0.45, alignContent: "center"}} locations={[0, 0.6, 1]} colors={["#C7C7C7", "#FFFFFF", "#C7C7C7"]}>
-                        <Text style={{fontSize: width * 0.05, color: Colors.secondary, fontFamily: 'oswaldmedium', TextAlign: "center", alignSelf: "center", marginBottom: width * 0.025 }}>CTE Video</Text>
-                        <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center" }} modestBranding={true} autoplay={true} mute={true} videoId="QOJT0XNee_o" />
-                    </LinearGradient>
+                    <View style={{ alignItems: "Center", backgroundColor: "#FFFFFF" }}>
+                        <LinearGradient style={{ width: width * 0.6, height: width * 0.45, alignContent: "center" }} locations={[0, 0.6, 1]} colors={["#C7C7C7", "#FFFFFF", "#C7C7C7"]}>
+                            <Text style={{ fontSize: width * 0.05, color: Colors.secondary, fontFamily: 'oswaldmedium', TextAlign: "center", alignSelf: "center", marginBottom: width * 0.025 }}>CTE Video</Text>
+                            <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center" }} modestBranding={true} autoplay={true} mute={true} videoId="QOJT0XNee_o" />
+                        </LinearGradient>
 
-                </View>
-                <View style={{ marginTop: width * 0.05 }} />
-                <Footer />
-            </ScrollView >
-        </ImageBackground >
+                    </View>
+                    <View style={{ marginTop: width * 0.05 }} />
+                    <Footer />
+                </ScrollView >
+            </ImageBackground >
         </View >
     )
 }
