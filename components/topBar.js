@@ -6,6 +6,8 @@ import { useState, useRef } from 'react';
 import { Dropdown } from 'react-native-element-dropdown'
 import { router } from 'expo-router'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { useNavigation, NavigationContainer, } from '@react-navigation/native';
 
 export default function topBar() {
 
@@ -67,30 +69,30 @@ export default function topBar() {
       router.replace({ "pathname": "./results", params: { queryData: query } }); // Pass myData as a parameter
     }
   }
-
   const styles = StyleSheet.create({
     topBar: {
       padding: width * 0.010,
       alignItems: 'center',
       backgroundColor: Colors.secondary,
-      flexDirection: 'row'
+      flexDirection: 'row',
+      height: width * 0.07
     },
     topImageStyle: {
-      marginLeft: width * 0.005,
-      height: width * 0.05,
-      width: width * 0.05
+      marginLeft: width * 0.006,
+      height: width * 0.06,
+      width: width * 0.06
     },
     titleStyle: {
       color: Colors.primary,
       fontWeight: 'bold',
-      fontSize: width * 0.025,
+      fontSize: width * 0.018,
       marginLeft: width * 0.01,
       marginRight: width * 0.1,
       fontFamily: 'oswaldsemibold'
     },
     topButtonStyle: {
       color: Colors.primary,
-      fontSize: width * 0.0175,
+      fontSize: width * 0.015,
       marginRight: width * 0.02,
       fontFamily: 'oswaldmedium'
     },
@@ -140,7 +142,7 @@ export default function topBar() {
           </Pressable>
         </Link>
 
-</View>
+      </View>
       <Link href={'/'}>
         <Pressable>
           <Text style={styles.titleStyle}>Career & Technical Education</Text>
@@ -150,14 +152,14 @@ export default function topBar() {
       <Pressable>
         <Dropdown
           confirmSelectItem showsVerticalScrollIndicator={false}
-          placeholder= <HoverableText> Departments </HoverableText>
+          placeholder=<HoverableText> Departments </HoverableText>
           placeholderStyle={{ color: Colors.primary, fontSize: width * 0.0175, fontFamily: 'oswaldmedium' }}
-          itemTextStyle={styles.dropdownButtonStyle} 
+          itemTextStyle={styles.dropdownButtonStyle}
           containerStyle={styles.dropdownContainer}
-          iconStyle={{ height: width * 0.015, width: width * 0.015, marginRight: width * 0.01 }} 
-          onChange={(item) => { setValue(item.value); }} 
+          iconStyle={{ height: width * 0.015, width: width * 0.015, marginRight: width * 0.01 }}
+          onChange={(item) => { setValue(item.value); }}
           onConfirmSelectItem={(item) => (router.navigate(item.href))}
-          labelField="label" 
+          labelField="label"
           valueField="value"
           data={
             [
@@ -192,7 +194,7 @@ export default function topBar() {
           <HoverableText>About</HoverableText>
         </Pressable>
       </Link>
-
+      
       <View style={styles.searchContainer}>
         <Pressable onPress={searchHandle}>
           <FontAwesome style={styles.placeholder} name="search" size={20} color="white" />
