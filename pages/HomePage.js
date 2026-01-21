@@ -27,83 +27,83 @@ function HomePage() {
           />
         </View>
       </View>
-      <ImageBackground style={styles.bgImg} source={require('../assets/engineer.png')}>
-        <ScrollView>
+      <View>
+      <ScrollView>
 
-          <View style={styles.chunk1}>
-            <Text style={styles.c1Title}>Find Your Pathway</Text>
-            <Pressable>
-              <Text style={styles.c1Button}>Searching Tool</Text>
-            </Pressable>
-          </View>
+        <View style={styles.chunk1}>
+          <Text style={styles.c1Title}>Find Your Pathway</Text>
+          <Pressable>
+            <Text style={styles.c1Button}>Searching Tool</Text>
+          </Pressable>
+        </View>
 
-          <View style={styles.chunk2}>
-            <Text style={styles.c2title}>Testimonies</Text>
-            <ScrollView style={{height: 500}} showsVerticalScrollIndicator={false}>
-              <View style = {styles.break}></View>
-              <View style={styles.c2chunk}>
-                <Text style={styles.c2cHeader}>Student Name</Text>
-                <Image
-                  source={require('../assets/placeholder.jpg')}
-                  style={styles.studentImg}
-                />
-                <Text style={styles.c2cBody}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
-                  Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </Text>
-              </View>
+        <View style={styles.chunk2}>
+          <Text style={styles.c2title}>Testimonies</Text>
+          <ScrollView style={{ height: 500 }} showsVerticalScrollIndicator={false}>
+            <View style={styles.break}></View>
+            <View style={styles.c2chunk}>
+              <Text style={styles.c2cHeader}>Student Name</Text>
+              <Image
+                source={require('../assets/placeholder.jpg')}
+                style={styles.studentImg}
+              />
+              <Text style={styles.c2cBody}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
+                Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              </Text>
+            </View>
 
-              <View style={styles.c2chunk}>
-                <Text style={styles.c2cHeader}>Student Name</Text>
-                <Image
-                  source={require('../assets/placeholder.jpg')}
-                  style={styles.studentImg}
-                />
-                <Text style={styles.c2cBody}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
-                  Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </Text>
-              </View>
+            <View style={styles.c2chunk}>
+              <Text style={styles.c2cHeader}>Student Name</Text>
+              <Image
+                source={require('../assets/placeholder.jpg')}
+                style={styles.studentImg}
+              />
+              <Text style={styles.c2cBody}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
+                Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              </Text>
+            </View>
 
-              <View style={styles.c2chunk}>
-                <Text style={styles.c2cHeader}>Student Name</Text>
-                <Image
-                  source={require('../assets/placeholder.jpg')}
-                  style={styles.studentImg}
-                />
-                <Text style={styles.c2cBody}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
-                  Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </Text>
-              </View>
+            <View style={styles.c2chunk}>
+              <Text style={styles.c2cHeader}>Student Name</Text>
+              <Image
+                source={require('../assets/placeholder.jpg')}
+                style={styles.studentImg}
+              />
+              <Text style={styles.c2cBody}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
+                Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              </Text>
+            </View>
 
-              <View style={styles.c2chunk}>
-                <Text style={styles.c2cHeader}>Student Name</Text>
-                <Image
-                  source={require('../assets/placeholder.jpg')}
-                  style={styles.studentImg}
-                />
-                <Text style={styles.c2cBody}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
-                  Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </Text>
-              </View>
+            <View style={styles.c2chunk}>
+              <Text style={styles.c2cHeader}>Student Name</Text>
+              <Image
+                source={require('../assets/placeholder.jpg')}
+                style={styles.studentImg}
+              />
+              <Text style={styles.c2cBody}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
+                Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              </Text>
+            </View>
 
-              <View style={styles.c2chunk}>
-                <Text style={styles.c2cHeader}>Student Name</Text>
-                <Image
-                  source={require('../assets/placeholder.jpg')}
-                  style={styles.studentImg}
-                />
-                <Text style={styles.c2cBody}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
-                  Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </Text>
-              </View>
-            </ScrollView>
-          </View>
-        </ScrollView>
-      </ImageBackground>
+            <View style={styles.c2chunk}>
+              <Text style={styles.c2cHeader}>Student Name</Text>
+              <Image
+                source={require('../assets/placeholder.jpg')}
+                style={styles.studentImg}
+              />
+              <Text style={styles.c2cBody}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate enim, in dictum neque.
+                Aliquam iaculis pharetra maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              </Text>
+            </View>
+          </ScrollView>
+        </View>
+      </ScrollView>
+      </View>
     </View>
   )
 }
