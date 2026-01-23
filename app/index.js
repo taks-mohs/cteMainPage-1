@@ -1,4 +1,5 @@
-import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions, Image } from 'react-native'
+import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions, Image, Pressable } from 'react-native'
+import React, { useState, useEffect } from 'react';
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 import Colors from '../components/colors'
 import TopBar from '../components/topBar'
@@ -10,7 +11,23 @@ import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/ImageInfoL'
 
 export default function HomePage() {
+   const backgrounds = [
+      require('../assets/Business/accounting.jpg'),
+      require('../assets/Health/Health.jpeg'),
+      require('../assets/CS/MiscImages/CSbackground.jpeg')
+   ]
+   const [currentBackground, setCurrentBackground] = useState(backgrounds[0])
+   const [index, setIndex] = useState(0);
    const { width } = useWindowDimensions()
+
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setIndex((prevIndex) => (prevIndex + 1) % backgrounds.length)
+      }, 5000)
+      return () => clearInterval(interval)
+
+   }, [])
+
    useFonts({
       'oswaldlight': Oswald_300Light,
       'oswaldmedium': Oswald_500Medium,
@@ -29,7 +46,15 @@ export default function HomePage() {
       },
       img: {
          height: 500,
-         width: '100%'
+         width: '100%',
+         justifyContent: 'center'
+
+      },
+      imgBtn: {
+         height: 50,
+         width: 50,
+         borderRadius: 25,
+         color: 'black'
       }
    })
 
@@ -37,7 +62,12 @@ export default function HomePage() {
       <View style={styles.background}>
          <TopBar />
          <ScrollView>
-            <Image style={styles.img} source={require('../assets/Business/accounting.jpg')}/>
+            <ImageBackground style={styles.img} source={backgrounds[index]}>
+               <Pressable
+                  style={styles.imgBtn}
+               > 
+               </Pressable>
+            </ImageBackground>
             <View style={{ marginTop: width * 0.25 }}></View>
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
