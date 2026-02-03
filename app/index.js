@@ -11,9 +11,9 @@ import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/ImageInfoL'
 
 const initialBackgrounds = [
-   { id: 0, current: true, uri: require('../assets/Business/accounting.jpg') },
-   { id: 1, current: false, uri: require('../assets/Health/Health.jpeg') },
-   { id: 2, current: false, uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
+   { id: 0,  uri: require('../assets/Business/accounting.jpg') },
+   { id: 1,  uri: require('../assets/Health/Health.jpeg') },
+   { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
 ]
 
 export default function HomePage() {
@@ -23,19 +23,20 @@ export default function HomePage() {
 
    useEffect(() => {
       const interval = setInterval(() => {
-         setIndex((prevIndex) => (prevIndex + 1) % currentBackground.length)
-         updateCurrent(index)
+         updateCurrent(index, false)
+         // console.log("yo")
       }, 5000)
       return () => clearInterval(interval)
 
    }, [currentBackground])
 
-   const updateCurrent = (id) => {
+   const updateCurrent = (id, change) => {
       setCurrentBackground(prevBackgrounds =>
          prevBackgrounds.map(background =>
-            background.id === String(id) ? { ...background, current: true } : { ...background, current: false }
+            background
          )
       )
+      change ? setIndex(id) : setIndex((prevIndex) => (prevIndex + 1) % currentBackground.length)
    }
 
    useFonts({
@@ -62,18 +63,21 @@ export default function HomePage() {
 
       },
       btnContainer: {
-         height: 40,
+         height: 50,
          width: width,
-         padding: 10,
+         padding: 20,
+         paddingRight: 40,
          flexDirection: 'row',
-         columnGap: 5
+         justifyContent: 'flex-end',
+         columnGap: 10
       },
       btn: {
-         height: 20,
-         width: 20,
-         borderRadius: 10,
+         height: 15,
+         width: 15,
+         borderRadius: 7.5,
          borderWidth: 2,
-         borderColor: 'black'
+         borderColor: 'black',
+         backgroundColor: '#ffffff23'
       },
       btnPressed: {
          backgroundColor: '#000000'
@@ -89,18 +93,18 @@ export default function HomePage() {
          <ScrollView>
             <ImageBackground style={styles.img} source={currentBackground[index].uri}>
                <View style={styles.btnContainer}>
-                  {currentBackground.map((background) => {
+                  {currentBackground.map((background) => (
                      <Pressable
                         key={background.id}
-                        onPress={() => updateCurrent(background.id)}
+                        onPress={() => updateCurrent(background.id, true)}
                         style={[
                            styles.btn,
-                           background.current ? styles.btnPressed : styles.btnNormal,
+                           index === background.id && styles.btnPressed
                         ]}
                      >
                      </Pressable>
 
-                  })}
+                  ))}
                </View>
             </ImageBackground>
             <View style={{ marginTop: width * 0.25 }}></View>
