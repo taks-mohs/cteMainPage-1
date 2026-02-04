@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, Image, ScrollView } from 'react-native'
 import TopBar from '../components/topBar'
 import Colors from '../components/colors'
+import Footer from '../components/footer'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 
 export default function about() {
@@ -48,6 +49,7 @@ export default function about() {
           </Text>
 
         </View>
+        <Footer />
       </ScrollView>
       
     </View>

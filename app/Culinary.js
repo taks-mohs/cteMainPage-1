@@ -17,7 +17,7 @@ export default function Culi() {
     const { width } = useWindowDimensions()
     useFonts({
         'oswaldmedium': Oswald_500Medium,
-      })
+    })
     return (
         <View style={styles.background}>
             <TopBar />
@@ -86,17 +86,17 @@ export default function Culi() {
                         ]}
                     />
                     <View style={{ marginTop: width * 0.05 }} />
-                    <View style={{alignItems: "Center", backgroundColor: "#FFFFFF"}}>
-                    <LinearGradient style={{ width: width * 0.6, height: width * 0.45, alignContent: "center"}} locations={[0, 0.6, 1]} colors={["#C7C7C7", "#FFFFFF", "#C7C7C7"]}>
-                        <Text style={{fontSize: width * 0.05, color: Colors.secondary, fontFamily: 'oswaldmedium', TextAlign: "center", alignSelf: "center", marginBottom: width * 0.025 }}>CTE Video</Text>
-                        <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center" }} modestBranding={true} autoplay={true} mute={true} videoId="QOJT0XNee_o" />
-                    </LinearGradient>
+                    <View style={{ alignItems: "Center", backgroundColor: "#FFFFFF" }}>
+                        <LinearGradient style={{ width: width * 0.6, height: width * 0.45, alignContent: "center" }} locations={[0, 0.6, 1]} colors={["#C7C7C7", "#FFFFFF", "#C7C7C7"]}>
+                            <Text style={{ fontSize: width * 0.05, color: Colors.secondary, fontFamily: 'oswaldmedium', TextAlign: "center", alignSelf: "center", marginBottom: width * 0.025 }}>CTE Video</Text>
+                            <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center" }} modestBranding={true} autoplay={true} mute={true} videoId="QOJT0XNee_o" />
+                        </LinearGradient>
 
-                </View>
-                <View style={{ marginTop: width * 0.05 }} />
-                <Footer />
-            </ScrollView >
-        </ImageBackground >
+                    </View>
+                    <View style={{ marginTop: width * 0.05 }} />
+                    <Footer />
+                </ScrollView >
+            </ImageBackground >
         </View >
     )
 }
@@ -107,7 +107,7 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.primary,
     },
     bgImg: {
-        height: '100%',
+        flex: 1,
         width: '100%',
         resizeMode: 'cover'
     },

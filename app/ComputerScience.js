@@ -1,6 +1,5 @@
 // React-native Imports
 import { Text, View, StyleSheet, ImageBackground, ScrollView, Image, Pressable, useWindowDimensions } from "react-native-web"
-import { Link } from 'expo-router'
 // Other Component Imports
 import Colors from "../components/colors"
 import TopBar from "../components/topBar"
@@ -23,6 +22,7 @@ export default function CS() {
             backgroundColor: Colors.primary,
         },
         bgImg: {
+            flex: 1,
             height: '100%',
             width: '100%',
             resizeMode: 'cover'
@@ -169,10 +169,8 @@ export default function CS() {
                             image={require('../assets/mohsLogov2.png')}
                         />
                     </View>
-                    <View style={{ marginTop: width * 0.05 }}></View>
                     <Footer />
                 </ScrollView>
-                <View style={{ marginTop: width * 0.05 }}></View>
             </ImageBackground>
         </View >
     )
@@ -184,7 +182,7 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.primary,
     },
     bgImg: {
-        height: '100%',
+        flex: 1,
         width: '100%',
         resizeMode: 'cover'
     },

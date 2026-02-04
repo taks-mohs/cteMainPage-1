@@ -20,7 +20,7 @@ export default function Health() {
       backgroundColor: Colors.primary,
     },
     bgImg: {
-      height: '100%',
+      flex: 1,
       width: '100%',
       resizeMode: 'cover'
     }
@@ -132,15 +132,12 @@ export default function Health() {
           />
           <View style={{ marginTop: width * 0.1 }}></View>
 
-          <View style={{alignItems: 'center',}}>
+          <View style={{ alignItems: 'center', }}>
             <YouTubePlayer style={{ height: 500, width: 500, }}
               videoId='Di_M-7WFFuA'
             />
 
           </View>
-
-            <View style={{ marginTop: width * 0.1 }}></View>
-
           <Footer />
         </ScrollView>
       </ImageBackground>

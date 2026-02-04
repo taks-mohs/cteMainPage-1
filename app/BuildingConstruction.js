@@ -8,7 +8,7 @@ import HeaderChunk from '../components/Templates/HeaderChunk'
 import Chunk2L from '../components/Templates/Chunk2L'
 import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
-import Footer from '../components/footer' 
+import Footer from '../components/footer'
 import { YouTubePlayer } from "../components/Youtube";
 import ImagelessInfoChunk from "../components/Templates/ImagelessInfoChunk";
 
@@ -154,15 +154,12 @@ export default function B_C() {
                     />
                     <View>
                         <YouTubePlayer
-                        videoId="0U3ip3_cLDU"
-                        
-                    />
+                            videoId="0U3ip3_cLDU"
+
+                        />
                     </View>
-                    
-                    <Footer 
-                        backgroundColor={Colors.secondary}
-                        textColor={Colors.primary}
-                    />
+
+                    <Footer />
                 </ScrollView>
             </ImageBackground>
         </View>
@@ -175,7 +172,7 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.primary,
     },
     bgImg: {
-        height: '100%',
+        flex: 1,
         width: '100%',
         resizeMode: 'cover'
     },

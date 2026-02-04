@@ -52,7 +52,7 @@ export default function Auto() {
             ]}
           />
 
-          <View style={{ marginTop: width * 0.1 }}></View>
+          <Footer />
         </ScrollView>
       </ImageBackground>
     </View>
@@ -65,9 +65,10 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   bgImg: {
-    height: '100%',
+    flex: 1,
     width: '100%',
     resizeMode: 'cover'
+
   },
   chunk1: {
     marginTop: 200,

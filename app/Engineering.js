@@ -6,7 +6,7 @@ import HeaderChunk from "../components/Templates/HeaderChunk"
 import InfoChunk from "../components/Templates/Chunk2Info"
 import Chunk2L from "../components/Templates/Chunk2L"
 import Chunk2R from "../components/Templates/Chunk2R"
-import footer from "../components/footer"
+import Footer from "../components/footer"
 import Chunk1 from "../components/Templates/Chunk1"
 import ImagelessInfoChunk from "../components/Templates/ImagelessInfoChunk"
 import { YouTubePlayer } from "../components/Youtube"
@@ -355,9 +355,8 @@ export default function Engi() {
                             />
                         </>
                     } />
-                    <View style={{ marginTop: width * 0.1 }}></View>
+                    <Footer />
                 </ScrollView >
-                <footer />
             </ImageBackground >
         </View >
     )
@@ -370,7 +369,7 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.primary,
     },
     bgImg: {
-        height: '100%',
+        flex: 1,
         width: '100%',
         resizeMode: 'cover'
     },
