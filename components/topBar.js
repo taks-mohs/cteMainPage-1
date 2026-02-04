@@ -72,21 +72,22 @@ export default function topBar() {
   }
   const styles = StyleSheet.create({
     topBar: {
-      padding: width * 0.010,
+      height: 90,
+      padding: width * 0.001,
       alignItems: 'center',
       backgroundColor: Colors.secondary,
       flexDirection: 'row',
       height: width * 0.07
     },
     topImageStyle: {
-      marginLeft: width * 0.006,
-      height: width * 0.06,
-      width: width * 0.06
+      marginLeft: width * 0.03,
+      height: width * 0.05,
+      width: width * 0.05
     },
     titleStyle: {
       color: Colors.primary,
       fontWeight: 'bold',
-      fontSize: width * 0.018,
+      fontSize: width * 0.015,
       marginLeft: width * 0.01,
       marginRight: width * 0.1,
       fontFamily: 'oswaldsemibold'

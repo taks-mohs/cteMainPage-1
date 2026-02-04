@@ -36,7 +36,7 @@ export default function searchingToolChunk(props) {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>{props.header}</Text>
-            <Link href={props.link}>
+            <Link href={props.link} target="_blank">
                 <Pressable>
                     <Image
                         source={props.image}

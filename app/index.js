@@ -51,7 +51,7 @@ export default function HomePage() {
          backgroundColor: Colors.primary,
       },
       bgImg: {
-         height: '100%',
+         flex: 1,
          width: '100%',
          resizeMode: 'cover'
       },
