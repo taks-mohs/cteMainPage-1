@@ -11,10 +11,11 @@ import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
 import { YouTubePlayer } from "../components/Youtube";
 import ImagelessInfoChunk from "../components/Templates/ImagelessInfoChunk";
+import conRoadmap from "../assets/Construction/ConstructionRoadmap.png"
 
 export default function B_C() {
     const player = useVideoPlayer(require('../assets/B_CVideo.mp4'), player => { player.play() });
-    const { width } = useWindowDimensions();
+    const { height, width } = useWindowDimensions();
     useFonts({
         'oswaldlight': Oswald_300Light,
         'oswaldmedium': Oswald_500Medium,
@@ -33,6 +34,7 @@ export default function B_C() {
                         header="Building & Construction"
                     />
                     <View style={{ marginTop: width * 0.05 }}></View>
+                    <Image source={conRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
                     <Chunk2L
                         backgroundColor={Colors.secondary}
                         textColor={Colors.primary}

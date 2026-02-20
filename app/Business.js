@@ -10,10 +10,11 @@ import Chunk2L from "../components/Templates/Chunk2L"
 import Chunk2R from "../components/Templates/Chunk2R"
 import HeaderChunk from "../components/Templates/HeaderChunk"
 import { YouTubePlayer } from "../components/Youtube"
+import BusinessRoadmap from "../assets/Business/BusinessRoadmap.png"
 
 export default function Busi() {
    const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
-   const { width } = useWindowDimensions();
+   const { height, width } = useWindowDimensions();
    const styles = StyleSheet.create({
       background: {
          flex: 1,
@@ -40,6 +41,7 @@ export default function Busi() {
                   modestBranding={true} autoplay={false} mute={false} videoId="QOJT0XNee_o"
                />
 
+               <Image source={BusinessRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.8}} />
                <View style={{ marginTop: width * 0.10 }}></View>
                <Chunk2R
                   header="Business Teachers"

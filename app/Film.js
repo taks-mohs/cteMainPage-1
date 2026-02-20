@@ -1,7 +1,7 @@
 /*import { Text, View, StyleSheet, ImageBackground, ScrollView, Image } from "react-native-web"
 import Colors from "../components/colors"
 import TopBar from "../components/topBar"*/
-import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions } from 'react-native'
+import { StyleSheet, View, Image, ImageBackground, ScrollView, useWindowDimensions } from 'react-native'
 import Colors from '../components/colors'
 import TopBar from '../components/topBar'
 import HeaderChunk from '../components/Templates/HeaderChunk.js'
@@ -10,9 +10,12 @@ import Chunk2L from '../components/Templates/Chunk2L'
 import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
+import FilmRoadmap from "../assets/Film/FilmRoadmap.png"
+import VisualArtsSuggested from '../assets/VisualArtsSuggested.png'
+
 
 export default function Film() {
-  const { width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
   const styles = StyleSheet.create({
     background: {
       flex: 1,
@@ -168,6 +171,8 @@ export default function Film() {
           <HeaderChunk
             header="Film"
           />
+          <Image source={FilmRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
+          <Image source={VisualArtsSuggested} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
           <View style={{ marginTop: width * 0.05, alignItems: 'center' }}></View>
           <Chunk2L
             header="Teachers"

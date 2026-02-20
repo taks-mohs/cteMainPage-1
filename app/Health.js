@@ -13,7 +13,7 @@ import { YouTubePlayer } from "../components/Youtube"
 
 export default function Health() {
   // const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
-  const { width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
   const styles = StyleSheet.create({
     background: {
       flex: 1,

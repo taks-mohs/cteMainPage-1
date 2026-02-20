@@ -11,10 +11,11 @@ import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import { YouTubePlayer } from "../components/Youtube"
 import { useFonts, Oswald_500Medium } from "expo-font"
+import CulinaryRoadmap from "../assets/Culinary/CulinaryRoadmap.png"
 
 export default function Culi() {
     const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
-    const { width } = useWindowDimensions()
+    const { height, width } = useWindowDimensions()
     useFonts({
         'oswaldmedium': Oswald_500Medium,
     })
@@ -25,6 +26,7 @@ export default function Culi() {
                 <ScrollView>
                     <View style={{ marginTop: width * 0.05 }} />
                     <HeaderChunk header={"Culinary"} />
+                    <Image source={CulinaryRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
                     <View style={{ marginTop: width * 0.05 }} />
                     <Chunk2L header={"Related Classes"}
                         primeColor="white"
