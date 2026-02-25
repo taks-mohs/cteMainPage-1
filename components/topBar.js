@@ -1,6 +1,7 @@
 import { View, Text, Image, Pressable, TextInput, StyleSheet, useWindowDimensions, TouchableOpacity, Animated, Modal } from 'react-native'
 import { Link } from 'expo-router'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
+import { NotoSans_400Regular, Ubuntu_400Regular } from '@expo-google-fonts/dev'
 import Colors from './colors'
 import { useState, useRef } from 'react';
 import { Dropdown } from 'react-native-element-dropdown'
@@ -18,6 +19,10 @@ export default function topBar() {
 
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
+
+  const highlight = () => {
+
+  }
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -47,7 +52,9 @@ export default function topBar() {
   useFonts({
     'oswaldlight': Oswald_300Light,
     'oswaldmedium': Oswald_500Medium,
-    'oswaldsemibold': Oswald_600SemiBold
+    'oswaldsemibold': Oswald_600SemiBold,
+    'notoSansRegular': NotoSans_400Regular,
+    'ubuntuRegular': Ubuntu_400Regular
   })
   const [query, setQuery] = useState('');
 
@@ -60,6 +67,20 @@ export default function topBar() {
         onMouseLeave={() => setIsHovering(false)}
       >
         <Text style={[styles.topButtonStyle, { color: isHovering ? 'gray' : Colors.primary }]}>
+          {children}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
+
+  const HoverableDpts = ({ children }) => {
+    const [isHovering, setIsHovering] = useState(false);
+    return (
+      <TouchableOpacity
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <Text style={[styles.dpts, { color: isHovering ? 'gray' : 'black' }]}>
           {children}
         </Text>
       </TouchableOpacity>
@@ -132,13 +153,17 @@ export default function topBar() {
       width: width,
     },
     navItemContainer: {
-      zIndex: 10, // Ensure it stays above other content
+      height: width * 0.07,
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 10,
     },
     popUpContainer: {
-      position: 'absolute', // This is key
-      top: '100%',         // Positions it directly below the "Departments" button
+      position: 'absolute',
+      top: '100%',
       left: 0,
-      width: width * 0.15,
+      width: width * 0.33,
+      height: width * 0.19,
       backgroundColor: '#ffffff',
       borderWidth: 1,
       borderColor: '#ccc',
@@ -147,14 +172,35 @@ export default function topBar() {
       shadowOpacity: 0.2,
       shadowRadius: 4,
       elevation: 5,
+      padding: width * 0.01
+      // marginTop: width * 0.024,
     },
-
+    header: {
+      fontSize: 30,
+      fontFamily: 'ubuntuRegular'
+    },
+    body: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
+    column: {
+      rowGap: width * 0.012,
+      margin: width * 0.007,
+      marginLeft: width * 0.01,
+      padding: width * 0.01
+    },
+    dpts: {
+      color: '#000000',
+      fontSize: width * 0.01,
+      marginRight: width * 0.02,
+      fontFamily: 'notoSansRegular'
+    },
   })
 
 
 
   return (
-   <View style={{ zIndex: 100 }}>
+    <View style={{ zIndex: 100 }}>
       <View style={styles.topBar}>
         <View
           onMouseEnter={handleMouseEnter}
@@ -175,22 +221,74 @@ export default function topBar() {
           </Pressable>
         </Link>
 
-        <View 
+        <View
           style={styles.navItemContainer}
-          onMouseEnter={() => setVisible(true)}
+          onMouseEnter={() => [setVisible(true), highlight()]}
           onMouseLeave={() => setVisible(false)}
         >
           <HoverableText>Departments</HoverableText>
-          
-          {/* 4. The dropdown is now a child of the hoverable area */}
+
           {isVisible && (
             <View style={styles.popUpContainer}>
-              <TouchableOpacity onPress={() => console.log('Option 1')}>
-                <Text style={styles.item}>Option 1</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log('Option 2')}>
-                <Text style={styles.item}>Option 2</Text>
-              </TouchableOpacity>
+              <View>
+                <Text style={styles.header}> DEPARTMENTS </Text>
+              </View>
+              <View style={styles.body}>
+                <View style={styles.column}>
+                  <Link href={'/Automotive'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Automotive</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/BuildingConstruction'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Building Construction</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Business'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Business</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/ComputerScience'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Computer Science</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Culinary'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Culinary</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                </View>
+                <View style={styles.column}>
+                  <Link href={'/Engineering'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Engineering</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Fashion'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Fashion</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Film'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Film</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Graphics'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Graphics</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                  <Link href={'/Health'}>
+                    <Pressable>
+                      <HoverableDpts style={styles.link}>Health Services</HoverableDpts>
+                    </Pressable>
+                  </Link>
+                </View>
+              </View>
             </View>
           )}
         </View>

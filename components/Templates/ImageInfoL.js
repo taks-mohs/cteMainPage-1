@@ -33,7 +33,7 @@ export default function infoChunkL (props) {
     mainChunk: {
       width: width,
       height: width * 0.27,
-      backgroundColor: Colors.background,
+      backgroundColor: Colors.secondary,
       alignItems: 'center',
       flexDirection: 'row',
     },
