@@ -16,13 +16,14 @@ export default function infoChunkL (props) {
     infoBox: {
         width: width * 0.5,
         height: 200,
-        padding: width * 0.05
+        padding: width * 0.05,
+        color: Colors.secondary
     },
     infoText: {
         fontSize: width * 0.025,
         fontFamily: 'latoregular',
-        textAlign: "center",
-        color: Colors.secondary
+        textAlign: "flex-start",
+        color: Colors.primary
     },
     imageBox: {
         width: width * 0.4,
@@ -33,7 +34,7 @@ export default function infoChunkL (props) {
     mainChunk: {
       width: width,
       height: width * 0.27,
-      backgroundColor: Colors.background,
+      backgroundColor: Colors.secondary,
       alignItems: 'center',
       flexDirection: 'row',
     },
