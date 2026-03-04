@@ -1,6 +1,7 @@
 import { View, Text, Image, Pressable, TextInput, StyleSheet, useWindowDimensions, TouchableOpacity, Animated } from 'react-native'
 import { Link } from 'expo-router'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
+import { NotoSans_400Regular, Ubuntu_400Regular } from '@expo-google-fonts/dev'
 import Colors from './colors'
 import { useState, useRef } from 'react';
 import { Dropdown } from 'react-native-element-dropdown'
@@ -14,6 +15,10 @@ export default function topBar() {
 
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
+
+  const highlight = () => {
+
+  }
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -43,7 +48,9 @@ export default function topBar() {
   useFonts({
     'oswaldlight': Oswald_300Light,
     'oswaldmedium': Oswald_500Medium,
-    'oswaldsemibold': Oswald_600SemiBold
+    'oswaldsemibold': Oswald_600SemiBold,
+    'notoSansRegular': NotoSans_400Regular,
+    'ubuntuRegular': Ubuntu_400Regular
   })
   const [query, setQuery] = useState('');
 
@@ -56,6 +63,20 @@ export default function topBar() {
         onMouseLeave={() => setIsHovering(false)}
       >
         <Text style={[styles.topButtonStyle, { color: isHovering ? 'gray' : Colors.primary }]}>
+          {children}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
+
+  const HoverableDpts = ({ children }) => {
+    const [isHovering, setIsHovering] = useState(false);
+    return (
+      <TouchableOpacity
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <Text style={[styles.dpts, { color: isHovering ? 'gray' : 'black' }]}>
           {children}
         </Text>
       </TouchableOpacity>

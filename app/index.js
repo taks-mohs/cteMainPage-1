@@ -9,8 +9,9 @@ import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
 import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/ImageInfoL'
+import ChangingBgs from '../components/Templates/ChangingBackground';
 
-const initialBackgrounds = [
+const backgrounds = [
    { id: 0,  uri: require('../assets/Business/accounting.jpg') },
    { id: 1,  uri: require('../assets/Health/Health.jpeg') },
    { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
@@ -18,26 +19,6 @@ const initialBackgrounds = [
 
 export default function HomePage() {
    const { width } = useWindowDimensions()
-   const [currentBackground, setCurrentBackground] = useState(initialBackgrounds)
-   const [index, setIndex] = useState(0)
-
-   useEffect(() => {
-      const interval = setInterval(() => {
-         updateCurrent(index, false)
-         // console.log("yo")
-      }, 5000)
-      return () => clearInterval(interval)
-
-   }, [currentBackground])
-
-   const updateCurrent = (id, change) => {
-      setCurrentBackground(prevBackgrounds =>
-         prevBackgrounds.map(background =>
-            background
-         )
-      )
-      change ? setIndex(id) : setIndex((prevIndex) => (prevIndex + 1) % currentBackground.length)
-   }
 
    useFonts({
       'oswaldlight': Oswald_300Light,
@@ -91,22 +72,7 @@ export default function HomePage() {
       <View style={styles.background}>
          <TopBar />
          <ScrollView>
-            <ImageBackground style={styles.img} source={currentBackground[index].uri}>
-               <View style={styles.btnContainer}>
-                  {currentBackground.map((background) => (
-                     <Pressable
-                        key={background.id}
-                        onPress={() => updateCurrent(background.id, true)}
-                        style={[
-                           styles.btn,
-                           index === background.id && styles.btnPressed
-                        ]}
-                     >
-                     </Pressable>
-
-                  ))}
-               </View>
-            </ImageBackground>
+            <ChangingBgs backgrounds={backgrounds}/>
             <View style={{ marginTop: width * 0.25 }}></View>
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
