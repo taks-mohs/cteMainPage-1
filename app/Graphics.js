@@ -8,9 +8,11 @@ import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
 import { Link } from 'expo-router'
+import GraphicsRoadmap from '../assets/Graphics/GraphicsRoadmap.png'
+import VisualArtsSuggested from '../assets/VisualArtsSuggested.png'
 
 export default function Graph() {
-  const { width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
 
 
   return (
@@ -22,6 +24,8 @@ export default function Graph() {
           <HeaderChunk
             header="Graphics"
           />
+          <Image source={GraphicsRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
+          <Image source={VisualArtsSuggested} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
           <View style={{ marginTop: width * 0.05 }}></View>
           <Chunk2L
             header="Classes Info"

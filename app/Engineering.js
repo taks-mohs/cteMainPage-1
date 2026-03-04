@@ -10,10 +10,10 @@ import Footer from "../components/footer"
 import Chunk1 from "../components/Templates/Chunk1"
 import ImagelessInfoChunk from "../components/Templates/ImagelessInfoChunk"
 import { YouTubePlayer } from "../components/Youtube"
-
+import EngineeringRoadmap from "../assets/ENGRG/EngineeringRoadmap.png"
 
 export default function Engi() {
-    const { width } = useWindowDimensions()
+    const { height, width } = useWindowDimensions()
     return (
         <View style={styles.background}>
             <TopBar />
@@ -21,6 +21,7 @@ export default function Engi() {
                 <ScrollView>
                     <View style={{ marginTop: width * 0.05 }}></View>
                     <HeaderChunk header={"Engineering"} />
+                    <Image source={EngineeringRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
                     <View style={{ marginTop: width * 0.05 }}></View>
                     <View style={{ alignItems: "center", justifyContent: "center", }}>
                         <YouTubePlayer rel={false} loop={false} videoId="rjP92bgib88" style={{ width: 0.5 * width, height: 0.25 * width, alignItems: "center", }} />

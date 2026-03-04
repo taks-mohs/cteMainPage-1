@@ -13,37 +13,33 @@ export default function searchingToolChunk(props) {
 
     const styles = StyleSheet.create({
         container: {
-            marginHorizontal: width * 0.1,
             padding: width * 0.05,
             backgroundColor: props.backgroundColor || Colors.primary,
             alignItems: 'center'
         },
-        header: {
-            fontSize: width * 0.05,
-            color: props.textColor || Colors.secondary,
-            fontFamily: 'oswaldmedium',
-            marginBottom: width * 0.02
-        },
         picture: {
-            fontSize: width * 0.025,
-            padding: width * 0.01,
-            color: props.backgroundColor || Colors.primary,
-            backgroundColor: props.textColor || Colors.secondary,
-            fontFamily: 'oswaldsemibold'
+            width: width,
+            height : 400
         }
     })
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>{props.header}</Text>
-            <Link href={props.link} target="_blank">
-                <Pressable>
-                    <Image
-                        source={props.image}
-                        style={styles.infoImage}
-                    />
-                </Pressable>
-            </Link>
+            {props.link ? (
+                <Link href={props.link} target="_blank">
+                    <Pressable>
+                        <Image
+                            source={props.image}
+                            style={styles.infoImage}
+                        />
+                    </Pressable>
+                </Link>
+            ) : (
+                <Image
+                    source={props.image}
+                    style={styles.picture}
+                />
+            )}
         </View>
     )
 }
