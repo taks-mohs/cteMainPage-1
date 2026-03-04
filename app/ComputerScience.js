@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, ImageBackground, ScrollView, Image, Pressable, 
 // Other Component Imports
 import Colors from "../components/colors"
 import TopBar from "../components/topBar"
+import Links from "../components/constants"
 // Template Component Imports
 import HeaderChunk from '../components/Templates/HeaderChunk.js'
 import Chunk1 from '../components/Templates/Chunk1'
@@ -12,10 +13,15 @@ import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
 import ImagelessInfoChunk from "../components/Templates/ImagelessInfoChunk"
+import csRoadmap from "../assets/CS/Progression.png"
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+
+
+const asset = resolveAssetSource(csRoadmap);
 
 export default function CS() {
     // Template Component
-    const { width } = useWindowDimensions()
+    const { height, width } = useWindowDimensions()
     const styles = StyleSheet.create({
         background: {
             flex: 1,
@@ -42,6 +48,7 @@ export default function CS() {
                     />
                     {/* Related Classes Section */}
                     <View style={{ marginTop: width * 0.05 }}></View>
+                    <Image source={csRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
                     <Chunk2L
                         header="Related Classes"
                         info={[
@@ -133,7 +140,6 @@ export default function CS() {
                     {/* End of Teachers Section */}
                     <View style={styles.chunk2}>
                         {/* Related Classes Section */}
-                        <View style={{ marginTop: width * 0.05 }}></View>
                         <Chunk2L
                             header="Suggested Courses"
                             info={[
@@ -162,10 +168,10 @@ export default function CS() {
                         />
                         {/* End of Suggested Courses Section  */}
                     </View>
-                    <View style={{ marginTop: width * 0.05 }}>
+                    <View>
                         <Chunk1Picture
                             header="Course Catalog (Press the Image)"
-                            link='https://www.moanaluahs.org/ourpages/auto/2022/3/15/40772712/2025-27%20Registration%20Course%20Catalog.pdf?rnd=1736024882726#page=25'
+                            link={Links.courseCatalog}
                             image={require('../assets/mohsLogov2.png')}
                         />
                     </View>
@@ -197,7 +203,7 @@ export const styles = StyleSheet.create({
         fontSize: 75,
         color: Colors.secondary,
         fontFamily: 'oswaldmedium',
-        marginBottom: 25
+        marginBottom: 25,
     },
     chunk2: {
         marginTop: 100,
@@ -249,5 +255,9 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 75
+    },
+    roadmap: {
+        alignSelf: 'center',
+        width: 600
     }
 })
