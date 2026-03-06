@@ -46,9 +46,12 @@ export default function ChangingBgs(props) {
         img: {
             height: 500,
             width: '100%',
+        },
+        dim: {
+            flex: 1,
             justifyContent: 'flex-end',
             alignItems: 'flex-start',
-
+            backgroundColor: '#00000063'
         },
         btnContainer: {
             height: 50,
@@ -65,7 +68,7 @@ export default function ChangingBgs(props) {
             borderRadius: 7.5,
             borderWidth: 2,
             borderColor: 'black',
-            backgroundColor: '#ffffff23'
+            backgroundColor: '#ffffff31'
         },
         btnPressed: {
             backgroundColor: '#000000'
@@ -78,19 +81,21 @@ export default function ChangingBgs(props) {
     return (
 
         <ImageBackground style={styles.img} source={currentBackground[index]?.uri}>
-            <View style={styles.btnContainer}>
-                {currentBackground.map((background) => (
-                    <Pressable
-                        key={background.id}
-                        onPress={() => updateCurrent(background.id, true)}
-                        style={[
-                            styles.btn,
-                            index === background.id && styles.btnPressed
-                        ]}
-                    >
-                    </Pressable>
+            <View style={styles.dim}>
+                <View style={styles.btnContainer}>
+                    {currentBackground.map((background) => (
+                        <Pressable
+                            key={background.id}
+                            onPress={() => updateCurrent(background.id, true)}
+                            style={[
+                                styles.btn,
+                                index === background.id && styles.btnPressed
+                            ]}
+                        >
+                        </Pressable>
 
-                ))}
+                    ))}
+                </View>
             </View>
         </ImageBackground>
 
