@@ -18,7 +18,7 @@ import { NotoSans_400Regular } from "@expo-google-fonts/dev"
 import ChangingBgs from '../components/Templates/ChangingBackground';
 
 const backgrounds = [
-   { id: 0,  uri: require('../assets/Business/accounting.jpg') },
+   { id: 0,  uri: require('../assets/Business/DECA.jpg') },
    { id: 1,  uri: require('../assets/Health/Health.jpeg') },
    { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
 ]
@@ -42,7 +42,6 @@ export default function Busi() {
    return (
       <View style={styles.background}>
          <TopBar />
-        
             <ScrollView>
                <ChangingBgs backgrounds={backgrounds}/>
                <View style={{ marginTop: width * 0.10 }}></View>
@@ -50,9 +49,9 @@ export default function Busi() {
                   header="Business"
                />
 
-               <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center", paddingTop: 24 }}
+               {/* <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center", paddingTop: 24 }}
                   modestBranding={true} autoplay={false} mute={false} videoId="QOJT0XNee_o"
-               />
+               /> */}
 
                <Image source={BusinessRoadmap} resizeMode="contain" style={{ alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.8 }} />
                <View style={{ marginTop: width * 0.05 }}></View>

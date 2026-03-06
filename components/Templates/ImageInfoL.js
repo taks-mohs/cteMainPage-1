@@ -14,15 +14,15 @@ export default function infoChunkL (props) {
 
   const styles = StyleSheet.create({
     infoBox: {
-        width: width * 0.5,
+        width: width * 0.535,
         height: 200,
-        padding: width * 0.05,
-        color: Colors.secondary
+        color: Colors.secondary,
+        borderWidth: 1,
     },
     infoText: {
         fontSize: width * 0.025,
         fontFamily: 'latoregular',
-        textAlign: "flex-start",
+        textAlign: "left",
         color: Colors.primary
     },
     imageBox: {
@@ -38,14 +38,6 @@ export default function infoChunkL (props) {
       alignItems: 'center',
       flexDirection: 'row',
     },
-    title: {
-      fontSize: width * 0.05,
-      marginRight: width * 0.1,
-      marginLeft: width * 0.04,
-      color: props.textColor || Colors.secondary,
-      fontFamily: 'oswaldsemibold',
-      textAlign: "center"
-    }
   })
 
 //   const imageUri = 

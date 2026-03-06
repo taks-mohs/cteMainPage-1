@@ -14,15 +14,15 @@ export default function infoChunkR(props) {
 
     const styles = StyleSheet.create({
         infoBox: {
-            width: width * 0.5,
+            width: width * 0.535,
             height: 200,
-            padding: width * 0.05,
-            color: Colors.secondary
+            color: Colors.secondary,
+            borderWidth: 1
         },
         infoText: {
             fontSize: width * 0.025,
             fontFamily: 'latoregular',
-            textAlign: "center",
+            textAlign: 'left',
             color: Colors.primary
         },
         imageBox: {
@@ -30,6 +30,7 @@ export default function infoChunkR(props) {
             height: width * 0.35,
             borderBottomWidth: 8,
             borderBottomColor: Colors.primary,
+            marginLeft: width * 0.05
         },
         mainChunk: {
             width: width,
