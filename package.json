@@ -9,8 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo-google-fonts/dev": "^0.4.45",
-    "@expo-google-fonts/noto-sans": "^0.4.2",
+    "@expo-google-fonts/dev": "^0.4.55",
     "@expo-google-fonts/oswald": "^0.2.3",
     "@expo/metro-runtime": "~6.1.2",
     "@react-navigation/drawer": "^7.1.1",
