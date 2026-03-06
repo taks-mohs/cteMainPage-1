@@ -15,6 +15,13 @@ import ImageInfoL from '../components/Templates/ImageInfoL'
 import ImageInfoR from '../components/Templates/ImageInfoR'
 import SmallHeader from '../components/Templates/SmallHeader'
 import { NotoSans_400Regular } from "@expo-google-fonts/dev"
+import ChangingBgs from '../components/Templates/ChangingBackground';
+
+const backgrounds = [
+   { id: 0,  uri: require('../assets/Business/accounting.jpg') },
+   { id: 1,  uri: require('../assets/Health/Health.jpeg') },
+   { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
+]
 
 export default function Busi() {
    const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
@@ -35,8 +42,9 @@ export default function Busi() {
    return (
       <View style={styles.background}>
          <TopBar />
-         <ImageBackground style={styles.bgImg} source={require('../assets/business-background.jpg')}>
+        
             <ScrollView>
+               <ChangingBgs backgrounds={backgrounds}/>
                <View style={{ marginTop: width * 0.10 }}></View>
                <HeaderChunk
                   header="Business"
@@ -213,7 +221,6 @@ promotional campaign through digital means and the applied use of data contained
 
                <Footer />
             </ScrollView>
-         </ImageBackground>
 
       </View>
    )
