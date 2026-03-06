@@ -1,4 +1,4 @@
-import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions, Image, Pressable, Button } from 'react-native'
+import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions, Image, Pressable, Button, Text } from 'react-native'
 import React, { useState, useEffect } from 'react';
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 
@@ -34,24 +34,18 @@ export default function ChangingBgs(props) {
     })
 
     const styles = StyleSheet.create({
-        background: {
-            flex: 1,
-            backgroundColor: '#ffffff',
-        },
-        bgImg: {
-            flex: 1,
-            width: '100%',
-            resizeMode: 'cover'
-        },
         img: {
             height: 500,
             width: '100%',
         },
+        headerContainer: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
         dim: {
             flex: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'flex-start',
-            backgroundColor: '#00000063'
+            backgroundColor: props.dimness
         },
         btnContainer: {
             height: 50,
@@ -61,6 +55,16 @@ export default function ChangingBgs(props) {
             flexDirection: 'row',
             justifyContent: 'flex-end',
             columnGap: 10
+        },
+        text: {
+            fontFamily: 'oswaldsemibold',
+            fontSize: props.fontSize,
+            color: props.textColor
+        },
+        textBar: {
+            width: props.barWidth,
+            height: width * 0.01,
+            backgroundColor: props.barColor
         },
         btn: {
             height: 15,
@@ -82,7 +86,11 @@ export default function ChangingBgs(props) {
 
         <ImageBackground style={styles.img} source={currentBackground[index]?.uri}>
             <View style={styles.dim}>
-                <View style={styles.btnContainer}>
+                <View style={styles.headerContainer}>
+                    <Text style={styles.text}> {props.text} </Text>
+                    <View style={styles.textBar}></View>
+                </View>
+                    <View style={styles.btnContainer}>
                     {currentBackground.map((background) => (
                         <Pressable
                             key={background.id}
@@ -96,6 +104,8 @@ export default function ChangingBgs(props) {
 
                     ))}
                 </View>
+                
+                
             </View>
         </ImageBackground>
 
