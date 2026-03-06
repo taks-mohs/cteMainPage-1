@@ -72,7 +72,15 @@ export default function HomePage() {
       <View style={styles.background}>
          <TopBar />
          <ScrollView>
-            <ChangingBgs backgrounds={backgrounds}/>
+            <ChangingBgs 
+               backgrounds={backgrounds} 
+               dimness={'#00000096'} 
+               fontSize={50} 
+               textColor={'white'} 
+               barWidth={'50%'} 
+               barColor={Colors.secondary}
+               text={'CTE'}
+            />
             <View style={{ marginTop: width * 0.25 }}></View>
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
