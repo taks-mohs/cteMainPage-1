@@ -1,12 +1,12 @@
 import { StyleSheet, Text, Pressable, View, useWindowDimensions } from 'react-native'
 import { Link } from 'expo-router'
-import { useFonts, NotoSans_400Regular } from '@expo-google-fonts/dev'
+import { useFonts, DMSans_700Bold } from '@expo-google-fonts/dev'
 import Colors from '../colors'
 
 export default function Header(props) {
   const { width } = useWindowDimensions()
   useFonts({
-    'noto' : NotoSans_400Regular,
+    'dm': DMSans_700Bold,
   })
 
   const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ export default function Header(props) {
     },
     header: {
       fontSize: width * 0.05,
-      fontFamily: NotoSans_400Regular,
+      fontFamily: 'dm',
       color: Colors.headerTxt,
       textAlign: 'center'
     }

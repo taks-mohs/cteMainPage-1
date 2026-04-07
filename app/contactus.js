@@ -16,7 +16,11 @@ export default function contactus() {
       <View style={styles.container}>
         <Text style={styles.font}>Address:  2825 Ala Ilima St, Honolulu, HI 96818 <br/>
           Phone:  (808) 305-1000 <br/>
-          Fax:	(808) 831-7919</Text>
+          Fax:	(808) 831-7919
+        </Text>
+        <Image
+          source={require("../assets/SchoolMap.png")}
+        />
       </View>
       <Footer />
     </View>
@@ -34,5 +38,8 @@ const styles = StyleSheet.create({
   font: {
     fontFamily: 'oswaldlight',
     fontSize: 20,
+  },
+  image: {
+    flex: 1
   }
 })

@@ -59,7 +59,8 @@ export default function ChangingBgs(props) {
         text: {
             fontFamily: 'oswaldsemibold',
             fontSize: props.fontSize,
-            color: props.textColor
+            color: props.textColor,
+            textAlign: 'center'
         },
         textBar: {
             width: props.barWidth,

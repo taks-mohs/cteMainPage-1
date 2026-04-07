@@ -36,7 +36,10 @@ export default function Health() {
             header="Health Services"
           />
           <View style={{ marginTop: width * 0.05 }}></View>
-
+          <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center", paddingTop: 24 }}
+                  modestBranding={true} autoplay={false} mute={false} videoId="l9SNTt6zUXE"
+          />
+          <View style={{ marginTop: width * 0.05 }}></View>
           <Chunk2R
             header="Information"
             info={[
