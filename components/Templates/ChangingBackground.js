@@ -59,7 +59,8 @@ export default function ChangingBgs(props) {
         text: {
             fontFamily: 'oswaldsemibold',
             fontSize: props.fontSize,
-            color: props.textColor
+            color: props.textColor,
+            textAlign: 'center'
         },
         textBar: {
             width: props.barWidth,
@@ -83,7 +84,6 @@ export default function ChangingBgs(props) {
     })
 
     return (
-
         <ImageBackground style={styles.img} source={currentBackground[index]?.uri}>
             <View style={styles.dim}>
                 <View style={styles.headerContainer}>
