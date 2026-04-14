@@ -11,128 +11,50 @@ export default function staff() {
   const API_KEY = 'AIzaSyBCYdzVQPtp3AYbrUIvOSv2uTCrm96zhc0';
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
 
-   useEffect(() => {
+  useEffect(() => {
     getData();
 
     const interval = setInterval(() => {
       getData();
-    }, 30000); 
-    
+    }, 30000);
+
     return () => clearInterval(interval);
   }, []);
 
   const getData = async () => {
     try {
       const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
       const result = await response.json();
-      // const values = result.split(", ")
-      console.log(result)
-      console.log(result.values[0])
-      // console.log(values)
 
-      formatData(result)
+      const keys = result.values[0];
+      const data = result.values.slice(1);
+      const formatted = data.map(arr => Object.assign({}, ...keys.map((k, i) => ({ [k]: arr[i] }))));
+
+      if (JSON.stringify(formatted) !== JSON.stringify(gSheetData)) {
+        setGSheetData(formatted);
+      }
     } catch (error) {
       console.error("Fetch failed:", error);
     }
   };
 
-  function formatData(response) {
-    const keys = response.values[0];
-    const data = response.values.slice(1);
-    const obj = data.map(arr => Object.assign({}, ...keys.map((k, i) => ({ [k]: arr[i] }))));
-    setGSheetData(obj)
-  }
-
-  // getData()
-
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImage}
-        source={require('../assets/placeholder.jpg')}
+        source={{ uri: 'https://hawaiipublicschools.org/wp-content/uploads/Moanalua-HS-BANNER.jpg' }}
       />
       <TopBar />
       <ScrollView style={styles.scrollContainer}>
-        <Button
-          onPress={getData}
-        >
-
-        </Button>
         <FlatList
           data={gSheetData}
           renderItem={({ item }) =>
             <TeacherDescription
               name={item.name}
-              source={require('../assets/TeacherHeadshots/Hashizume-E.jpg')}
+              source={item.source}
               description={item.description}
             />}
         />
-
-
-        <TeacherDescription
-          name='Mr.Hashizume'
-          source={require('../assets/TeacherHeadshots/Hashizume-E.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mrs. Hashizume"
-          source={require('../assets/TeacherHeadshots/Hashizume-L.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Ishikawa"
-          source={require('../assets/TeacherHeadshots/Ishikawa.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Komar"
-          source={require('../assets/TeacherHeadshots/Komar.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Ms. Kramer"
-          source={require('../assets/TeacherHeadshots/Kramer.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Makekau"
-          source={require('../assets/TeacherHeadshots/Makekau.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Mitsuda"
-          source={require('../assets/TeacherHeadshots/Mitsuda.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Murray"
-          source={require('../assets/TeacherHeadshots/Murray.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Nishimura"
-          source={require('../assets/TeacherHeadshots/Nishimura.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Park"
-          source={require('../assets/TeacherHeadshots/Park.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Ms. Perkins"
-          source={require('../assets/TeacherHeadshots/Perkins.jpg')}
-          description='description'
-        />
-        <TeacherDescription
-          name="Mr. Takahashi"
-          source={require('../assets/TeacherHeadshots/Takahashi.jpg')}
-          description='description'
-        />
-
       </ScrollView>
     </View>
   )
@@ -142,9 +64,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  // dim: {
+  //   alignSelf: 'center',
+  //   position: "absolute",
+  //   flex: 1,
+  //   backgroundColor: '#000000c7'
+  // },
   backgroundImage: {
     alignSelf: 'center',
-    opacity: '78%',
+    opacity: '63%',
     position: "absolute",
 
     width: Dimensions.get("window").width,
