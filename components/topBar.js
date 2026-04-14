@@ -299,6 +299,12 @@ export default function topBar() {
           </Pressable>
         </Link>
 
+        <Link href={'/CTSO'}>
+          <Pressable>
+            <HoverableText>CTSO</HoverableText>
+          </Pressable>
+        </Link>
+
         <Link href={'/contactus'}>
           <Pressable>
             <HoverableText>Contact Us</HoverableText>
