@@ -84,7 +84,6 @@ export default function ChangingBgs(props) {
     })
 
     return (
-
         <ImageBackground style={styles.img} source={currentBackground[index]?.uri}>
             <View style={styles.dim}>
                 <View style={styles.headerContainer}>
@@ -102,13 +101,9 @@ export default function ChangingBgs(props) {
                             ]}
                         >
                         </Pressable>
-
                     ))}
                 </View>
-                
-                
             </View>
         </ImageBackground>
-
     )
 }

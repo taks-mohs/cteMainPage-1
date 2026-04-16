@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 export default function infoChunkR(props) {
     const { width } = useWindowDimensions()
+    
     useFonts({
         'googlesanscode': GoogleSansCode_500Medium,
         'latoregular': Lato_400Regular,

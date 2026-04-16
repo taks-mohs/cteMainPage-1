@@ -9,6 +9,7 @@ import Chunk2Info from "../components/Templates/Chunk2Info"
 import Chunk2L from "../components/Templates/Chunk2L"
 import Chunk2R from "../components/Templates/Chunk2R"
 import HeaderChunk from "../components/Templates/HeaderChunk"
+import Teacher from "../components/Templates/Teacher"
 import { YouTubePlayer } from "../components/Youtube"
 import BusinessRoadmap from "../assets/Business/BusinessRoadmap.png"
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
@@ -53,8 +54,8 @@ export default function Busi() {
                text={'Business Management, Finance & Marketing'}
             />
             <View style={{ marginTop: width * 0.05 }}></View>
-            <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center", paddingTop: 24 }}
-                  modestBranding={true} autoplay={false} mute={false} videoId="-whTf0yhDeU"
+            <YouTubePlayer style={{ width: width * 3.5 * 0.175, height: width * 3.5 * 0.105, alignSelf: "center", paddingTop: 24 }}
+               modestBranding={true} autoplay={false} mute={false} videoId="-whTf0yhDeU"
             />
             <View style={{ marginTop: width * 0.05 }}></View>
             <Image source={BusinessRoadmap} resizeMode="contain" style={{ alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.8 }} />
@@ -68,6 +69,10 @@ export default function Busi() {
             <View style={{ marginTop: width * 0.10 }}></View>
             <SmallHeader
                header="Entrepreneurship"
+            />
+            <View style={{ marginTop: width * 0.06 }}></View>
+            <Teacher
+               info="aaaaa"
             />
             <View style={{ marginTop: width * 0.10 }}></View>
             <ImageInfoR
@@ -86,6 +91,10 @@ export default function Busi() {
             <View style={{ marginTop: width * 0.10 }}></View>
             <SmallHeader
                header="Financial Management"
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <Teacher
+               info="aaaaa"
             />
             <View style={{ marginTop: width * 0.10 }}></View>
             <ImageInfoR
