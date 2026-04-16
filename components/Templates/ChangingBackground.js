@@ -101,13 +101,9 @@ export default function ChangingBgs(props) {
                             ]}
                         >
                         </Pressable>
-
                     ))}
                 </View>
-                
-                
             </View>
         </ImageBackground>
-
     )
 }

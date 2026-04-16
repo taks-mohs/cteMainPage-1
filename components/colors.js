@@ -1,7 +1,7 @@
 const Colors = {
   primary: '#FBFBEF',
   secondary: '#001d8f',
-  headerBg: '#777777',
+  headerBg: '#001d8f',
   headerTxt: '#FFFFFF'
 }
 
