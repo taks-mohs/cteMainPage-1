@@ -10,6 +10,7 @@ import Footer from '../components/footer'
 import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/ImageInfoL'
 import ChangingBgs from '../components/Templates/ChangingBackground';
+import ChangingBgInfoL from '../components/Templates/ChangingBgInfoL'
 
 const backgrounds = [
    { id: 0,  uri: require('../assets/Business/accounting.jpg') },
@@ -85,7 +86,13 @@ export default function HomePage() {
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
                imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
-               text='herro'
+               text='hersasdro'
+            />
+            <ChangingBgInfoL 
+               backgrounds={backgrounds}
+               fontSize={20}
+               textColor={'white'}
+               text={'herrsao'}
             />
             <View style={{ marginTop: width * 0.1 }}></View>
             <Footer />
