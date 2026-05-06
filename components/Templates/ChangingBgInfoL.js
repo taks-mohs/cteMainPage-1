@@ -42,10 +42,10 @@ export default function ChangingBgs(props) {
 
     const styles = StyleSheet.create({
         infoBox: {
-            width: width * 0.5,
+            width: width * 0.535,
             height: 200,
             padding: width * 0.05,
-            color: Colors.secondary
+            color: Colors.secondary,
         },
         infoText: {
             fontSize: width * 0.025,
@@ -63,10 +63,9 @@ export default function ChangingBgs(props) {
         mainChunk: {
             width: width,
             height: width * 0.27,
-            backgroundColor: Colors.secondary,
+            backgroundColor: props.color,
             alignItems: 'center',
             flexDirection: 'row',
-            marginVertical: width * 0.3
         },
         headerContainer: {
             flex: 1,

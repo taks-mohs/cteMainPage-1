@@ -10,7 +10,7 @@ import Footer from '../components/footer'
 import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground';
-import ChangingBgInfoL from '../components/Templates/ChangingBgInfoL'
+import ChangingBgInfoL from '../components/Templates/ChangingBGInfoL'
 
 const backgrounds = [
    { id: 0,  uri: require('../assets/Business/Accounting.jpg') },

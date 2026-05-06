@@ -24,8 +24,7 @@ const backgrounds = [
    { id: 2, uri: require('../assets/Business/BloodDrivePresent.jpg') }
 ]
 
-export default function Busi() {
-   const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
+export default function Business() {
    const { height, width } = useWindowDimensions();
    const styles = StyleSheet.create({
       background: {

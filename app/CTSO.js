@@ -7,15 +7,32 @@ import Footer from '../components/footer'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground'
 import ChangingBgInfoL from '../components/Templates/ChangingBGInfoL'
+import ChangingBgInfoR from '../components/Templates/ChangingBGInfoR'
+import ImageHeader from '../components/Templates/ImageHeader'
 
-const backgrounds = [
-   { id: 0,  uri: require('../assets/Business/DECA.jpg') },
-   { id: 1,  uri: require('../assets/Health/Health.jpeg') },
-   { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
+const HeaderBackgrounds = [
+   { id: 0, uri: require('../assets/Business/DECA.jpg') }, //deca photo
+   { id: 1, uri: require('../assets/CTSO/HOSA/HOSAPicture.png') }, //hosa photo
+   { id: 2, uri: require('../assets/Business/FallFest2.jpg') } //fccla photo
+]
+const DECABackgrounds = [
+   { id: 0, uri: require('../assets/Business/Roleplay.jpg') },
+   { id: 1, uri: require('../assets/Business/Awards.jpg') },
+   { id: 2, uri: require('../assets/Business/FallFest2.jpg') }
+]
+const HOSABackgrounds = [
+   { id: 0, uri: require('../assets/Business/Roleplay.jpg') },
+   { id: 1, uri: require('../assets/Business/Awards.jpg') },
+   { id: 2, uri: require('../assets/Business/FallFest2.jpg') }
+]
+const FCCLABackgrounds = [
+   { id: 0, uri: require('../assets/Business/Roleplay.jpg') },
+   { id: 1, uri: require('../assets/Business/Awards.jpg') },
+   { id: 2, uri: require('../assets/Business/FallFest2.jpg') }
 ]
 
 export default function CTSO() {
-   const { height,width } = useWindowDimensions()
+   const { height, width } = useWindowDimensions()
 
    useFonts({
       'oswaldlight': Oswald_300Light,
@@ -69,20 +86,53 @@ export default function CTSO() {
       <View style={styles.background}>
          <TopBar />
          <ScrollView>
-            <ChangingBgs 
-               backgrounds={backgrounds} 
-               dimness={'#00000096'} 
-               fontSize={50} 
-               textColor={'white'} 
-               barWidth={'50%'} 
+            <ChangingBgs
+               backgrounds={HeaderBackgrounds}
+               dimness={'#00000096'}
+               fontSize={50}
+               textColor={'white'}
+               barWidth={'50%'}
                barColor={Colors.secondary}
                text={'CTSO'}
             />
-            <View style={{ marginTop: width * 0.25 }}></View>
-            <View style={{ marginTop: width * 0.05 }}></View>
+            <View style={{ marginTop: width * 0.1 }}></View>
+            <ImageHeader 
+               backgroundColor={'white'}
+               image = {require('../assets/CTSO/DECA/DECALogo.png')}
+            />
+            <View style={{ marginTop: width * 0.1 }}></View>
             <ChangingBgInfoL
-               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
-               text='herro'
+               backgrounds={DECABackgrounds}
+               fontSize={20}
+               textColor={'white'}
+               text={'yam'}
+               color = {Colors.DECA}
+            />
+            <View style={{ marginTop: width * 0.1 }}></View>
+            <ImageHeader 
+               backgroundColor={'white'}
+               image = {require('../assets/CTSO/HOSA/HOSALogo.png')}
+            />
+            <View style={{ marginTop: width * 0.1 }}></View>
+            <ChangingBgInfoR
+               backgrounds={HOSABackgrounds}
+               fontSize={20}
+               textColor={'white'}
+               text={'yam'}
+               color = {Colors.HOSA}
+            />
+            <View style={{ marginTop: width * 0.1 }}></View>
+            <ImageHeader 
+               backgroundColor={'white'}
+               image = {require('../assets/CTSO/FCCLA/FCCLALogo.png')}
+            />
+            <View style={{ marginTop: width * 0.1 }}></View>
+            <ChangingBgInfoL
+               backgrounds={FCCLABackgrounds}
+               fontSize={20}
+               textColor={'white'}
+               text={'yam'}
+               color = {Colors.FCCLA}
             />
             <View style={{ marginTop: width * 0.1 }}></View>
             <Footer />
