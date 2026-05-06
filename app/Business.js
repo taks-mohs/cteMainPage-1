@@ -73,6 +73,7 @@ export default function Busi() {
             <View style={{ marginTop: width * 0.06 }}></View>
             <teacher
                info="aaaaa"
+               imageUri={require("../assets/TeacherHeadshots/GOAT.jpg")}
             />
             <View style={{ marginTop: width * 0.10 }}></View>
             <ImageInfoR
