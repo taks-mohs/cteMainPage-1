@@ -10,7 +10,8 @@ import Footer from '../components/footer'
 import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground';
-import ChangingBgInfoL from '../components/Templates/ChangingBgInfoL'
+import ChangingBGInfoL from '../components/Templates/ChangingBGInfoL'
+import teacher from '../components/Templates/teacher'
 
 const backgrounds = [
    { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
@@ -83,12 +84,16 @@ export default function HomePage() {
                text={'CTE'}
             />
             <View style={{ marginTop: width * 0.25 }}></View>
+            <teacher 
+               imageUri={require('../assets/TeacherHeadshots/GOAT.jpg')}
+               info='a'
+            />
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
                imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
-               text='hersasdro'
+               text='hersasdmro'
             />
-            <ChangingBgInfoL 
+            <ChangingBGInfoL 
                backgrounds={backgrounds}
                fontSize={20}
                textColor={'white'}

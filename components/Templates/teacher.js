@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, useWindowDimensions } from 'react-native'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 import Colors from '../colors'
 
-export default function searchingToolChunk(props) {
+export default function teacher(props) {
     const { width } = useWindowDimensions()
     useFonts({
         'oswaldlight': Oswald_300Light,
@@ -12,6 +12,8 @@ export default function searchingToolChunk(props) {
 
     const styles = StyleSheet.create({
         container: {
+            width: width,
+            height: width * 0.5,
             padding: width * 0.075,
             backgroundColor: props.backgroundColor || Colors.secondary,
             alignItems: 'center'
@@ -24,11 +26,20 @@ export default function searchingToolChunk(props) {
         imageContainer: {
             justifyContent: 'center',
             alignItems: 'center',
+        },
+        image: {
+            width: width * 0.3,
+            height: height * 0.4,
+
         }
     })
 
     return (
         <View style={styles.container}>
+            <Image
+                source={props.imageUri}
+                style={styles.image}
+            />
             <Text style={styles.info}>{props.info}</Text>
         </View>
     )
