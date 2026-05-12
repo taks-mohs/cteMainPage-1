@@ -2,7 +2,6 @@ import { View, StyleSheet, ScrollView, Image, useWindowDimensions } from "react-
 import Colors from "../components/colors"
 import TopBar from "../components/topBar"
 import Footer from "../components/footer"
-import Teacher from "../components/Templates/Teacher"
 import { YouTubePlayer } from "../components/Youtube"
 import AutoRoadmap from "../assets/Automotive/AutoRoadmap.png"
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'

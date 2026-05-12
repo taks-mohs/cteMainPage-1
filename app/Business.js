@@ -9,7 +9,6 @@ import Chunk2Info from "../components/Templates/Chunk2Info"
 import Chunk2L from "../components/Templates/Chunk2L"
 import Chunk2R from "../components/Templates/Chunk2R"
 import HeaderChunk from "../components/Templates/HeaderChunk"
-import teacher from "../components/Templates/teacher"
 import { YouTubePlayer } from "../components/Youtube"
 import BusinessRoadmap from "../assets/Business/BusinessRoadmap.png"
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'

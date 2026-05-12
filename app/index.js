@@ -11,8 +11,6 @@ import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground';
 import ChangingBGInfoL from '../components/Templates/ChangingBGInfoL'
-import teacher from '../components/Templates/teacher'
-import ChangingBgInfoL from '../components/Templates/ChangingBGInfoL'
 
 const backgrounds = [
    { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
@@ -83,11 +81,6 @@ export default function HomePage() {
                barWidth={'50%'} 
                barColor={Colors.secondary}
                text={'CTE'}
-            />
-            <View style={{ marginTop: width * 0.25 }}></View>
-            <teacher 
-               imageUri={require('../assets/TeacherHeadshots/GOAT.jpg')}
-               info='a'
             />
             <View style={{ marginTop: width * 0.05 }}></View>
             <ImageInfoL
