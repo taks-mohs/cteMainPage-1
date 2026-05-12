@@ -12,7 +12,7 @@ import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground';
 
 const backgrounds = [
-   { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
+   { id: 0,  uri: require('../assets/Business/tax.jpg') },
    { id: 1,  uri: require('../assets/Health/Health.jpeg') },
    { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
 ]
@@ -85,12 +85,6 @@ export default function HomePage() {
             <ImageInfoL
                imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
                text='hersasdmro'
-            />
-            <ChangingBGInfoL 
-               backgrounds={backgrounds}
-               fontSize={20}
-               textColor={'white'}
-               text={'herrsao'}
             />
             <View style={{ marginTop: width * 0.1 }}></View>
             <Footer />

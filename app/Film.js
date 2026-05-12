@@ -18,7 +18,7 @@ import ImageInfoR from '../components/Templates/CourseInfoPictureL'
 import SmallHeader from '../components/Templates/SmallHeader'
 
 const backgrounds = [
-   { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
+   { id: 0,  uri: require('../assets/Business/tax.jpg') },
    { id: 1,  uri: require('../assets/Health/Health.jpeg') },
    { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
 ]

@@ -104,7 +104,7 @@ export default function Business() {
             />
             <View style={{ marginTop: width * 0.10 }}></View>
             <ImageInfoL
-               imageUri={require("../assets/Business/Accounting.jpg")}
+               imageUri={require("../assets/Business/tax.jpg")}
                header="Accounting"
                accn="ACCN: TBT3000"
                info={"Accounting is the third course for Financial Management program of study designed to inform students about basic procedures of accounting. Upon completion of the course, a proficient student will demonstrate various accounting and basic business transactions, and apply the full accounting cycle, analyze financial data, and explain ethical behavior in the accounting field. Recommended for students who are interested in pursuing a career in banking, finance, or accounting."}
