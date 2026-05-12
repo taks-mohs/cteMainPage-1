@@ -1,7 +1,7 @@
 /*import { Text, View, StyleSheet, ImageBackground, ScrollView, Image } from "react-native-web"
 import Colors from "../components/colors"
 import TopBar from "../components/topBar"*/
-import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions } from 'react-native'
+import { StyleSheet, View, Image, ImageBackground, ScrollView, useWindowDimensions } from 'react-native'
 import Colors from '../components/colors'
 import TopBar from '../components/topBar'
 import HeaderChunk from '../components/Templates/HeaderChunk.js'
@@ -10,9 +10,21 @@ import Chunk2L from '../components/Templates/Chunk2L'
 import Chunk2R from '../components/Templates/Chunk2R'
 import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
+import FilmRoadmap from "../assets/Film/FilmRoadmap.png"
+import VisualArtsSuggested from '../assets/VisualArtsSuggested.png'
+import ChangingBgs from "../components/Templates/ChangingBackground"
+import ImageInfoL from '../components/Templates/CourseInfoPictureR'
+import ImageInfoR from '../components/Templates/CourseInfoPictureL'
+import SmallHeader from '../components/Templates/SmallHeader'
+
+const backgrounds = [
+   { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
+   { id: 1,  uri: require('../assets/Health/Health.jpeg') },
+   { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
+]
 
 export default function Film() {
-  const { width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
   const styles = StyleSheet.create({
     background: {
       flex: 1,
@@ -25,6 +37,93 @@ export default function Film() {
     }
   })
   return (
+     <View style={styles.background}>
+         <TopBar />
+         <ScrollView>
+            <ChangingBgs
+               backgrounds={backgrounds}
+               dimness={'#00000096'}
+               fontSize={80}
+               textColor={'white'}
+               barWidth={'50%'}
+               barColor={Colors.secondary}
+               text={'Film'}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoL
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={"info"}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <SmallHeader
+               header="header"
+            />
+            <View style={{ marginTop: width * 0.06 }}></View>
+            <teacher
+               info="aaaaa"
+               imageUri={require("../assets/TeacherHeadshots/GOAT.jpg")}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoR
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={'info'}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoL
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={"info"}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <SmallHeader
+               header="header"
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <teacher
+               info="aaaaa"
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoR
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={'info'}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoL
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={"info"}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <SmallHeader
+               header="header"
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoR
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={'info'}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <ImageInfoL
+               imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
+               header="header"
+               accn="ACCN: accn"
+               info={"info"}
+            />
+            <View style={{ marginTop: width * 0.10 }}></View>
+            <Footer />
+         </ScrollView>
+
+      </View>
     /*<View style={styles.background}>
         <TopBar />
         <ImageBackground style={styles.bgImg} source={require('../assets/placeholder.jpg')}>
@@ -160,51 +259,53 @@ export default function Film() {
         </ImageBackground>
     </View>
     */
-    <View style={styles.background}>
-      <TopBar />
-      <ImageBackground style={styles.bgImg} source={require('../assets/placeholder.jpg')}>
-        <ScrollView>
-          <View style={{ marginTop: width * 0.05 }}></View>
-          <HeaderChunk
-            header="Film"
-          />
-          <View style={{ marginTop: width * 0.05, alignItems: 'center' }}></View>
-          <Chunk2L
-            header="Teachers"
-            info={[
-              <Chunk2Info
-                infoHeader="Mr. Zavala"
-                image={require('../assets/Film/zavala_image.jpg')}
-                infoBody=''
-              />,
-              <Chunk2Info
-                infoHeader="Mr. Ikenaga"
-                image={require('../assets/Film/ikenaga_image.jpg')}
-                infoBody=''
-              />,
-            ]}
-          />
-          <View style={{ marginTop: width * 0.05, alignItems: 'center' }}></View>
-          <Chunk2R
-            header="MeneMac"
-            info={[
-              <Chunk2Info
-                infoHeader=""
-                image={require('../assets/Film/camera_temp.jpg')}
-                infoBody='The motto for MeneMac is "We Create to Inspire". The program is focused on learning how to create unique media, and proving those skills through projects and competitions. The MeneMac students work on a variety of topics, ranging from documentaries to promotionional features. To learn more about MeneMac and Film at Moanalua, visit the MeneMac website which is listed below.'
-              />,
-            ]}
-          />
-          <View style={{ marginTop: width * 0.05 }}></View>
-          <Chunk1
-            header="MeneMac Website"
-            buttonlabel="Click Here"
-            link="https://menemacmohs.weebly.com/"
-          />
-          <Footer />
-        </ScrollView>
-      </ImageBackground>
-    </View>
+    // <View style={styles.background}>
+    //   <TopBar />
+    //   <ImageBackground style={styles.bgImg} source={require('../assets/placeholder.jpg')}>
+    //     <ScrollView>
+    //       <View style={{ marginTop: width * 0.05 }}></View>
+    //       <HeaderChunk
+    //         header="Film"
+    //       />
+    //       <Image source={FilmRoadmap} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
+    //       <Image source={VisualArtsSuggested} resizeMode="contain" style={{alignSelf: 'center', aspectRatio: 1, width: width * 0.8, height: height * 0.615}} />
+    //       <View style={{ marginTop: width * 0.05, alignItems: 'center' }}></View>
+    //       <Chunk2L
+    //         header="Teachers"
+    //         info={[
+    //           <Chunk2Info
+    //             infoHeader="Mr. Zavala"
+    //             image={require('../assets/Film/zavala_image.jpg')}
+    //             infoBody=''
+    //           />,
+    //           <Chunk2Info
+    //             infoHeader="Mr. Ikenaga"
+    //             image={require('../assets/Film/ikenaga_image.jpg')}
+    //             infoBody=''
+    //           />,
+    //         ]}
+    //       />
+    //       <View style={{ marginTop: width * 0.05, alignItems: 'center' }}></View>
+    //       <Chunk2R
+    //         header="MeneMac"
+    //         info={[
+    //           <Chunk2Info
+    //             infoHeader=""
+    //             image={require('../assets/Film/camera_temp.jpg')}
+    //             infoBody='The motto for MeneMac is "We Create to Inspire". The program is focused on learning how to create unique media, and proving those skills through projects and competitions. The MeneMac students work on a variety of topics, ranging from documentaries to promotionional features. To learn more about MeneMac and Film at Moanalua, visit the MeneMac website which is listed below.'
+    //           />,
+    //         ]}
+    //       />
+    //       <View style={{ marginTop: width * 0.05 }}></View>
+    //       <Chunk1
+    //         header="MeneMac Website"
+    //         buttonlabel="Click Here"
+    //         link="https://menemacmohs.weebly.com/"
+    //       />
+    //       <Footer />
+    //     </ScrollView>
+    //   </ImageBackground>
+    // </View>
   )
 }
 
