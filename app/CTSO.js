@@ -6,7 +6,7 @@ import TopBar from '../components/topBar'
 import Footer from '../components/footer'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
 import ChangingBgs from '../components/Templates/ChangingBackground'
-import ChangingBgInfoL from '../components/Templates/yammy'
+import ChangingBgInfoL from '../components/Templates/ChangingBGInfoL'
 import ChangingBgInfoR from '../components/Templates/ChangingBGInfoR'
 import ImageHeader from '../components/Templates/ImageHeader'
 
