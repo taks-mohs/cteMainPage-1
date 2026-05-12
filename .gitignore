@@ -36,4 +36,3 @@ yarn-error.*
 *.tsbuildinfo
 package-lock.json
 package.json
-components/Templates/ChangingBgInfoL.js
