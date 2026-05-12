@@ -30,7 +30,7 @@ export default function ChangingBgs(props) {
         )
         change ? setIndex(id) : setIndex((prevIndex) => (prevIndex + 1) % currentBackground.length)
     }
-    
+
     useFonts({
         'oswaldlight': Oswald_300Light,
         'oswaldmedium': Oswald_500Medium,
