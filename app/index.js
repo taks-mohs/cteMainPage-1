@@ -86,6 +86,7 @@ export default function HomePage() {
                imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
                text='hersasdmro'
             />
+            <EventChunk />
             <View style={{ marginTop: width * 0.1 }}></View>
             <Footer />
          </ScrollView>

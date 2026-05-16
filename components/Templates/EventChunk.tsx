@@ -9,7 +9,7 @@ import EventCard from '../Event'
 export default function EventChunk() {
    const { width } = useWindowDimensions()
    const [events, setEvents] = useState<Event[]>([]);
-   console.log(events.length)
+   //console.log(events.length)
    useEffect(() => {
       Event.getEvents()
          .then(setEvents)
@@ -24,7 +24,8 @@ export default function EventChunk() {
    const styles = StyleSheet.create({
       container: {
          marginHorizontal: width * 0.1,
-         padding: width * 0.05,
+         marginTop: 100,
+         padding: width * 0.02,
          backgroundColor: Colors.primary,
          alignItems: 'center'
       },
