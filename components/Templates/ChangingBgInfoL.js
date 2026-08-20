@@ -1,129 +1,92 @@
-import { StyleSheet, View, ImageBackground, ScrollView, useWindowDimensions, Image, Pressable, Button, Text } from 'react-native'
-import React, { useState, useEffect } from 'react';
-import {
-    useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium,
-    Nunito_400Regular, Lato_400Regular, Inter_900Black, GoogleSansCode_500Medium,
-} from '@expo-google-fonts/oswald'
+import { StyleSheet, Image, Text, View, ScrollView, useWindowDimensions } from 'react-native'
 import Colors from '../colors'
+import {
+    useFonts, Nunito_400Regular, Lato_400Regular, DMSans_300Light, GoogleSansCode_500Medium, Roboto_300Light
+} from '@expo-google-fonts/dev';
+import { LinearGradient } from 'expo-linear-gradient'
 
-export default function ChangingBgs(props) {
-    const backgrounds = props.backgrounds || []
-
+export default function infoChunkR(props) {
     const { width } = useWindowDimensions()
-    const [currentBackground, setCurrentBackground] = useState(backgrounds)
-    const [index, setIndex] = useState(0)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            updateCurrent(index, false)
-            // console.log("yo")
-        }, 5000)
-        return () => clearInterval(interval)
-
-    }, [currentBackground])
-
-    const updateCurrent = (id, change) => {
-        setCurrentBackground(prevBackgrounds =>
-            prevBackgrounds.map(background =>
-                background
-            )
-        )
-        change ? setIndex(id) : setIndex((prevIndex) => (prevIndex + 1) % currentBackground.length)
-    }
 
     useFonts({
-        'oswaldlight': Oswald_300Light,
-        'oswaldmedium': Oswald_500Medium,
-        'oswaldsemibold': Oswald_600SemiBold,
         'googlesanscode': GoogleSansCode_500Medium,
         'latoregular': Lato_400Regular,
-
+        'roboto': Roboto_300Light,
+        'dmsans': DMSans_300Light
     })
 
     const styles = StyleSheet.create({
+        text: {
+            flexDirection: 'column',
+            alignContent: 'flex-start',
+            justifyContent: 'flex-start',
+        },
+        imageContainer: {
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
         infoBox: {
-            width: width * 0.5,
-            height: 200,
-            padding: width * 0.05,
-            color: Colors.secondary
+            width: width * 0.535,
+            color: Colors.secondary,
         },
         infoText: {
-            fontSize: width * 0.025,
+            fontSize: 18,
+            padding: 15,
+            fontFamily: 'dmsans',
+            textAlign: "left",
+            color: Colors.primary,
+        },
+        headerBox: {
+            width: width * 0.5,
+            justifyContent: 'center',
+        },
+        headerInfo: {
+            fontSize: 40,
             fontFamily: 'latoregular',
             textAlign: "flex-start",
-            color: Colors.primary
+            color: Colors.primary,
+            paddingTop: 15,
+            paddingLeft: 15,
         },
         imageBox: {
             width: width * 0.4,
-            height: width * 0.32,
+            height: width * 0.35,
             borderBottomWidth: 8,
             borderBottomColor: Colors.primary,
-            justifyContent: 'flex-end',
+            marginLeft: width * 0.05
         },
         mainChunk: {
             width: width,
             height: width * 0.27,
             backgroundColor: Colors.secondary,
-            alignItems: 'center',
             flexDirection: 'row',
-            marginVertical: width * 0.3
         },
-        headerContainer: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-        },
-        text: {
+        title: {
+            fontSize: width * 0.05,
+            marginLeft: width * 0.1,
+            marginRight: width * 0.04,
+            color: props.textColor || Colors.secondary,
             fontFamily: 'oswaldsemibold',
-            fontSize: props.fontSize,
-            color: props.textColor,
-            textAlign: 'center'
-        },
-        btnContainer: {
-            height: width * 0.1,
-            width: width * 0.4,
-            flexDirection: 'row',
-            justifyContent: 'center',
-            padding: width * 0.05,
-            columnGap: width * 0.014,
-        },
-        btn: {
-            height: 14,
-            width: 14,
-            borderRadius: 7,
-            borderWidth: 2,
-            borderColor: 'black',
-            backgroundColor: '#ffffff31'
-        },
-        btnPressed: {
-            backgroundColor: '#000000'
-        },
-        btnNormal: {
-            backgroundColor: '#ffffff23'
+            textAlign: "center"
         }
     })
 
     return (
         <View style={styles.mainChunk}>
-            <View style={styles.infoBox}>
-                <Text style={styles.infoText}> {props.text} </Text>
+            <View style={styles.imageContainer}>
+                <Image
+                    style={styles.imageBox}
+                    source={props.imageUri}
+                />
             </View>
-            <ImageBackground style={styles.imageBox} source={currentBackground[index]?.uri}>
-                <View style={styles.btnContainer}>
-                    {currentBackground.map((background) => (
-                        <Pressable
-                            key={background.id}
-                            onPress={() => updateCurrent(background.id, true)}
-                            style={[
-                                styles.btn,
-                                index === background.id && styles.btnPressed
-                            ]}
-                        >
-                        </Pressable>
-
-                    ))}
+            <View style={styles.text}>
+                <View style={styles.headerBox}>
+                    <Text style={styles.headerInfo}>{props.header}</Text>
                 </View>
-            </ImageBackground>
+                <View style={styles.infoBox}>
+                    <Text style={styles.infoText}><Text style={{ fontWeight: 'bold' }}>{props.accn}</Text>{"\n"}{props.info}</Text>
+                </View>
+            </View>
         </View>
     )
 }
