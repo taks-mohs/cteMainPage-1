@@ -2,6 +2,7 @@ import { StyleSheet, Image, Text, TextInput, Pressable, View, ImageBackground, S
 import { Link } from 'expo-router'
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 import TopBar from '../components/topBar'
+import Footer from '../components/footer'
 import { useState } from 'react';
 
 export default function FAQ() {
@@ -25,8 +26,8 @@ export default function FAQ() {
   
 const styles = StyleSheet.create({
   bgImg: {
-    height: height,
-    width: width,
+    flex: 1,
+    width: '100%',
     resizeMode: 'cover'
   },
   container: {
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
               </>
             )}
           </View>
+          <Footer />
         </ScrollView>
       </ImageBackground>
     </View>

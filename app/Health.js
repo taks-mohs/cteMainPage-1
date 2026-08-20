@@ -13,14 +13,14 @@ import { YouTubePlayer } from "../components/Youtube"
 
 export default function Health() {
   // const player = useVideoPlayer(require('../assets/Business/BusinessCTE.mp4'), player => { player.play(); player.loop = true; player.muted = true; });
-  const { width } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
   const styles = StyleSheet.create({
     background: {
       flex: 1,
       backgroundColor: Colors.primary,
     },
     bgImg: {
-      height: '100%',
+      flex: 1,
       width: '100%',
       resizeMode: 'cover'
     }
@@ -36,7 +36,10 @@ export default function Health() {
             header="Health Services"
           />
           <View style={{ marginTop: width * 0.05 }}></View>
-
+          <YouTubePlayer style={{ width: width * 3.5 * 0.16, height: width * 3.5 * 0.09, alignSelf: "center", paddingTop: 24 }}
+                  modestBranding={true} autoplay={false} mute={false} videoId="l9SNTt6zUXE"
+          />
+          <View style={{ marginTop: width * 0.05 }}></View>
           <Chunk2R
             header="Information"
             info={[
@@ -132,15 +135,12 @@ export default function Health() {
           />
           <View style={{ marginTop: width * 0.1 }}></View>
 
-          <View style={{alignItems: 'center',}}>
+          <View style={{ alignItems: 'center', }}>
             <YouTubePlayer style={{ height: 500, width: 500, }}
               videoId='Di_M-7WFFuA'
             />
 
           </View>
-
-            <View style={{ marginTop: width * 0.1 }}></View>
-
           <Footer />
         </ScrollView>
       </ImageBackground>

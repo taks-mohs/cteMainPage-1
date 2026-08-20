@@ -3,24 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { useFonts, Oswald_300Light, Oswald_600SemiBold, Oswald_500Medium } from '@expo-google-fonts/oswald'
 import Colors from '../components/colors'
 import TopBar from '../components/topBar'
-import Chunk1 from '../components/Templates/Chunk1'
-import Chunk2L from '../components/Templates/Chunk2L'
-import Chunk2Info from '../components/Templates/Chunk2Info'
 import Footer from '../components/footer'
-import EventChunk from '../components/Templates/EventChunk'
 import ImageInfoL from '../components/Templates/CourseInfoPictureR'
-import ChangingBgs from '../components/Templates/ChangingBackground';
-import ChangingBGInfoL from '../components/Templates/ChangingBGInfoL'
-import teacher from '../components/Templates/teacher'
+import ChangingBgs from '../components/Templates/ChangingBackground'
+import ChangingBgInfoL from '../components/Templates/ChangingBGInfoL'
 
 const backgrounds = [
-   { id: 0,  uri: require('../assets/Business/Accounting.jpg') },
+   { id: 0,  uri: require('../assets/Business/DECA.jpg') },
    { id: 1,  uri: require('../assets/Health/Health.jpeg') },
    { id: 2,  uri: require('../assets/CS/MiscImages/CSbackground.jpeg') }
 ]
 
-export default function HomePage() {
-   const { width } = useWindowDimensions()
+export default function CTSO() {
+   const { height,width } = useWindowDimensions()
 
    useFonts({
       'oswaldlight': Oswald_300Light,
@@ -81,23 +76,13 @@ export default function HomePage() {
                textColor={'white'} 
                barWidth={'50%'} 
                barColor={Colors.secondary}
-               text={'CTE'}
+               text={'CTSO'}
             />
             <View style={{ marginTop: width * 0.25 }}></View>
-            <teacher 
-               imageUri={require('../assets/TeacherHeadshots/GOAT.jpg')}
-               info='a'
-            />
             <View style={{ marginTop: width * 0.05 }}></View>
-            <ImageInfoL
+            <ChangingBgInfoL
                imageUri={require("../assets/Fashion/IMG_5437.jpeg")}
-               text='hersasdmro'
-            />
-            <ChangingBGInfoL 
-               backgrounds={backgrounds}
-               fontSize={20}
-               textColor={'white'}
-               text={'herrsao'}
+               text='herro'
             />
             <View style={{ marginTop: width * 0.1 }}></View>
             <Footer />
